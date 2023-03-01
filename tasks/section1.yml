@@ -242,6 +242,23 @@
       - filesystems
       - rule_1.1.1.7
 
+- name: "SCORED | 1.1.1.7 | PATCH | Ensure mounting of tipc filesystems is disabled"
+  lineinfile:
+      dest: /etc/modprobe.d/CIS.conf
+      regexp: "^(#)?install tipc(\\s|$)"
+      line: "install tipc /bin/true"
+      state: present
+      create: true
+  when:
+      - ubuntu2004cis_rule_1_1_1_7
+  tags:
+      - level1
+      - scored
+      - patch
+      - udf
+      - filesystems
+      - rule_1.1.1.7
+
 - name: "SCORED | 1.1.1.7 | PATCH | Remove tipc module"
   modprobe:
       name: tipc
@@ -275,6 +292,23 @@
       - filesystems
       - rule_1.1.1.7
 
+- name: "SCORED | 1.1.1.7 | PATCH | Ensure mounting of rds filesystems is disabled"
+  lineinfile:
+      dest: /etc/modprobe.d/CIS.conf
+      regexp: "^(#)?install rds(\\s|$)"
+      line: "install rds /bin/true"
+      state: present
+      create: true
+  when:
+      - ubuntu2004cis_rule_1_1_1_7
+  tags:
+      - level1
+      - scored
+      - patch
+      - udf
+      - filesystems
+      - rule_1.1.1.7
+
 - name: "SCORED | 1.1.1.7 | PATCH | Remove rds module"
   modprobe:
       name: rds
@@ -295,6 +329,23 @@
       dest: /etc/modprobe.d/CIS.conf
       regexp: "^(#)?blacklist dccp(\\s|$)"
       line: "blacklist dccp"
+      state: present
+      create: true
+  when:
+      - ubuntu2004cis_rule_1_1_1_7
+  tags:
+      - level1
+      - scored
+      - patch
+      - udf
+      - filesystems
+      - rule_1.1.1.7
+
+- name: "SCORED | 1.1.1.7 | PATCH | Ensure mounting of dccp filesystems is disabled"
+  lineinfile:
+      dest: /etc/modprobe.d/CIS.conf
+      regexp: "^(#)?install dccp(\\s|$)"
+      line: "install dccp /bin/true"
       state: present
       create: true
   when:
