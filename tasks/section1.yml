@@ -401,6 +401,52 @@
       - filesystems
       - rule_1.1.1.7
 
+- name: "SCORED | 1.1.1.7 | PATCH | Ensure mounting of sctp filesystems is disabled"
+  lineinfile:
+      dest: /etc/modprobe.d/CIS.conf
+      regexp: "^(#)?blacklist sctp(\\s|$)"
+      line: "blacklist sctp"
+      state: present
+      create: true
+  when:
+      - ubuntu2004cis_rule_1_1_1_7
+  tags:
+      - level1
+      - scored
+      - patch
+      - filesystems
+      - rule_1.1.1.7
+
+- name: "SCORED | 1.1.1.7 | PATCH | Ensure mounting of sctp filesystems is disabled"
+  lineinfile:
+      dest: /etc/modprobe.d/CIS.conf
+      regexp: "^(#)?install sctp(\\s|$)"
+      line: "install sctp /bin/true"
+      state: present
+      create: true
+  when:
+      - ubuntu2004cis_rule_1_1_1_7
+  tags:
+      - level1
+      - scored
+      - patch
+      - filesystems
+      - rule_1.1.1.7
+
+- name: "SCORED | 1.1.1.7 | PATCH | Remove sctp module"
+  modprobe:
+      name: sctp
+      state: absent
+  when:
+      - ubuntu2004cis_rule_1_1_1_7
+      - not ubuntu2004cis_skip_for_travis
+  tags:
+      - level1
+      - scored
+      - patch
+      - filesystems
+      - rule_1.1.1.7
+
 
 - name: "SCORED | 1.1.2 | PATCH | Ensure separate partition exists for /tmp | enable and start/restart tmp.mount"
   copy:
