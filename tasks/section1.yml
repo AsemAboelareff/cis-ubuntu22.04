@@ -193,6 +193,23 @@
       - filesystems
       - rule_1.1.1.7
 
+- name: "SCORED | 1.1.1.7 | PATCH | Ensure mounting of udf filesystems is disabled"
+  lineinfile:
+      dest: /etc/modprobe.d/CIS.conf
+      regexp: "^(#)?blacklist udf(\\s|$)"
+      line: "blacklist udf"
+      state: present
+      create: true
+  when:
+      - ubuntu2004cis_rule_1_1_1_7
+  tags:
+      - level1
+      - scored
+      - patch
+      - udf
+      - filesystems
+      - rule_1.1.1.7
+
 - name: "SCORED | 1.1.1.7 | PATCH | Remove udf module"
   modprobe:
       name: udf
@@ -207,6 +224,104 @@
       - udf
       - filesystems
       - rule_1.1.1.7
+
+- name: "SCORED | 1.1.1.7 | PATCH | Ensure mounting of tipc filesystems is disabled"
+  lineinfile:
+      dest: /etc/modprobe.d/CIS.conf
+      regexp: "^(#)?blacklist tipc(\\s|$)"
+      line: "blacklist tipc"
+      state: present
+      create: true
+  when:
+      - ubuntu2004cis_rule_1_1_1_7
+  tags:
+      - level1
+      - scored
+      - patch
+      - udf
+      - filesystems
+      - rule_1.1.1.7
+
+- name: "SCORED | 1.1.1.7 | PATCH | Remove tipc module"
+  modprobe:
+      name: tipc
+      state: absent
+  when:
+      - ubuntu2004cis_rule_1_1_1_7
+      - not ubuntu2004cis_skip_for_travis
+  tags:
+      - level1
+      - scored
+      - patch
+      - udf
+      - filesystems
+      - rule_1.1.1.7
+
+
+- name: "SCORED | 1.1.1.7 | PATCH | Ensure mounting of rds filesystems is disabled"
+  lineinfile:
+      dest: /etc/modprobe.d/CIS.conf
+      regexp: "^(#)?blacklist rds(\\s|$)"
+      line: "blacklist rds"
+      state: present
+      create: true
+  when:
+      - ubuntu2004cis_rule_1_1_1_7
+  tags:
+      - level1
+      - scored
+      - patch
+      - udf
+      - filesystems
+      - rule_1.1.1.7
+
+- name: "SCORED | 1.1.1.7 | PATCH | Remove rds module"
+  modprobe:
+      name: rds
+      state: absent
+  when:
+      - ubuntu2004cis_rule_1_1_1_7
+      - not ubuntu2004cis_skip_for_travis
+  tags:
+      - level1
+      - scored
+      - patch
+      - udf
+      - filesystems
+      - rule_1.1.1.7
+
+- name: "SCORED | 1.1.1.7 | PATCH | Ensure mounting of dccp filesystems is disabled"
+  lineinfile:
+      dest: /etc/modprobe.d/CIS.conf
+      regexp: "^(#)?blacklist dccp(\\s|$)"
+      line: "blacklist dccp"
+      state: present
+      create: true
+  when:
+      - ubuntu2004cis_rule_1_1_1_7
+  tags:
+      - level1
+      - scored
+      - patch
+      - udf
+      - filesystems
+      - rule_1.1.1.7
+
+- name: "SCORED | 1.1.1.7 | PATCH | Remove dccp module"
+  modprobe:
+      name: dccp
+      state: absent
+  when:
+      - ubuntu2004cis_rule_1_1_1_7
+      - not ubuntu2004cis_skip_for_travis
+  tags:
+      - level1
+      - scored
+      - patch
+      - udf
+      - filesystems
+      - rule_1.1.1.7
+
 
 - name: "SCORED | 1.1.2 | PATCH | Ensure separate partition exists for /tmp | enable and start/restart tmp.mount"
   copy:

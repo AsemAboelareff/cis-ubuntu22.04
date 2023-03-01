@@ -294,7 +294,7 @@
   block:
 
       - name: "SCORED | 4.1.11 | PATCH | Get list of setuid/setguid binaries"
-        shell: for i in  $(df | grep '^/dev' | awk '{ print $NF }'); do find $i -xdev -type f -perm -4000 -o -type f -perm -2000 2>/dev/null; done
+        shell: for PARTITION in $(findmnt -n -l -k -it $(awk '/nodev/ { print $2 }' /proc/filesystems | paste -sd,) | grep -Pv "noexec|nosuid" | awk '{print $1}'); do for PRIVILEGED in $(find "${PARTITION}" -xdev -perm /6000 -type f); do grep -qr "${PRIVILEGED}" /etc/audit/rules.d && printf "${PRIVILEGED} \n" || printf "${PRIVILEGED} \n"; done; done
         register: priv_procs
         changed_when: false
         check_mode: false
