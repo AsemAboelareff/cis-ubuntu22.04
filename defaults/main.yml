@@ -208,7 +208,7 @@ ubuntu2004cis_rule_5_1_1: false
 ubuntu2004cis_rule_5_1_2: false
 ubuntu2004cis_rule_5_1_3: false
 ubuntu2004cis_rule_5_1_4: false
-ubuntu2004cis_rule_5_1_5: false
+ubuntu2004cis_rule_5_1_5: true
 ubuntu2004cis_rule_5_1_6: false
 ubuntu2004cis_rule_5_1_7: false
 ubuntu2004cis_rule_5_1_8: false
@@ -232,7 +232,7 @@ ubuntu2004cis_rule_5_2_16: false
 ubuntu2004cis_rule_5_2_17: false
 ubuntu2004cis_rule_5_2_18: false
 ubuntu2004cis_rule_5_2_19: false
-ubuntu2004cis_rule_5_2_20: false
+ubuntu2004cis_rule_5_2_20: true
 ubuntu2004cis_rule_5_2_21: false
 ubuntu2004cis_rule_5_2_22: false
 ubuntu2004cis_rule_5_3_1: false
