@@ -52,8 +52,8 @@
   when: ubuntu2004cis_section6
   tags: section6
 
-- include: post.yml
-  become: true
-  tags:
-      - post_tasks
-      - always
+#- include: post.yml
+#  become: true
+#  tags:
+#      - post_tasks
+#      - always
