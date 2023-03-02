@@ -57,7 +57,7 @@
 
 - name: "PRELIM | Section 4.1 | Configure System Accounting (auditd)"
   apt:
-    name: "{{ auditd_package[ansible_os_family] }}"
+    name: "{{ auditd_package }}"
     state: present
     install_recommends: false
   when:

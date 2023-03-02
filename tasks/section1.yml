@@ -441,7 +441,7 @@
       - ubuntu2004cis_rule_1_1_1_7
       - not ubuntu2004cis_skip_for_travis
   tags:
-      - level1
+      - level1x
       - scored
       - patch
       - filesystems
