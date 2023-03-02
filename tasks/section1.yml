@@ -202,6 +202,7 @@
   modprobe:
       name: squashfs
       state: absent
+  ignoreerrors: true    
   when:
       - ubuntu2004cis_rule_1_1_1_6
   tags:
