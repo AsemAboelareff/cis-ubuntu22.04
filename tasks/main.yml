@@ -27,10 +27,10 @@
   when: ubuntu2004cis_section1
   tags: section1
 
-- include: section2.yml
-  become: true
-  when: ubuntu2004cis_section2
-  tags: section2
+# - include: section2.yml
+#   become: true
+#   when: ubuntu2004cis_section2
+#   tags: section2
 
 - include: section3.yml
   become: true
@@ -47,10 +47,10 @@
   when: ubuntu2004cis_section5
   tags: section5
 
-- include: section6.yml
-  become: true
-  when: ubuntu2004cis_section6
-  tags: section6
+# - include: section6.yml
+#   become: true
+#   when: ubuntu2004cis_section6
+#   tags: section6
 
 #- include: post.yml
 #  become: true
