@@ -383,6 +383,9 @@
       owner: root
       group: root
       mode: 0600
+     notify:
+      - load audit rules
+      - restart auditd 
    - lineinfile:
       dest: /etc/sudoers
       regexp: "^(#)?Defaults	logfile(\\s|$)"
@@ -394,9 +397,6 @@
        state: touch   
   when:
       - ubuntu2004cis_rule_4_1_15
-  notify:
-      - load audit rules
-      - restart auditd
   tags:
       - level2
       - scored
