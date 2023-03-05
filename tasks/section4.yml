@@ -376,12 +376,19 @@
       - rule_4.1.14
 
 - name: "SCORED | 4.1.15 | PATCH | Ensure system administrator actions (sudolog) are collected"
-  template:
+  block:
+   - template:
       src: audit/ubuntu2004cis_rule_4_1_15.rules.j2
       dest: /etc/audit/rules.d/ubuntu2004cis_rule_4_1_15.rules
       owner: root
       group: root
       mode: 0600
+   - lineinfile:
+      dest: /etc/sudoers
+      regexp: "^(#)?Defaults	logfile(\\s|$)"
+      line: 'Defaults	logfile="/var/log/sudo.log"'
+      state: present
+      create: true  
   when:
       - ubuntu2004cis_rule_4_1_15
   notify:
