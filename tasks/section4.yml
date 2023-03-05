@@ -389,6 +389,9 @@
       line: 'Defaults	logfile="/var/log/sudo.log"'
       state: present
       create: true  
+   - file:
+       path: /var/log/sudo.log
+       state: touch   
   when:
       - ubuntu2004cis_rule_4_1_15
   notify:
