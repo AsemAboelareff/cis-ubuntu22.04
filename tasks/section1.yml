@@ -222,7 +222,7 @@
       state: present
       create: true
   when:
-      - ubuntu2004cis_rule_1_1_1_7
+      - udf
   tags:
       - level1
       - scored
@@ -239,7 +239,7 @@
       state: present
       create: true
   when:
-      - ubuntu2004cis_rule_1_1_1_7
+      - udf
   tags:
       - level1
       - scored
@@ -253,7 +253,7 @@
       name: udf
       state: absent
   when:
-      - ubuntu2004cis_rule_1_1_1_7
+      - udf
       - not ubuntu2004cis_skip_for_travis
   tags:
       - level1
