@@ -1,7 +1,10 @@
 ---
+udf: false
+ubuntu2004cis_ipv6_required: true
+bastion: false
+
 # defaults file for Ubuntu2004-CIS
 ubuntu2004cis_skip_for_travis: false
-udf: false
 ubuntu2004cis_notauto: false
 ubuntu2004cis_section1: true
 ubuntu2004cis_section2: false
@@ -322,7 +325,7 @@ ubuntu2004cis_set_boot_pass: false
 ubuntu2004cis_is_router: false
 
 # IPv6 required
-ubuntu2004cis_ipv6_required: true
+
 
 # AIDE
 ubuntu2004cis_config_aide: false
