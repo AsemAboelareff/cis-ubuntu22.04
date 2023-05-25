@@ -242,7 +242,7 @@
       line: 'X11Forwarding no'
   when:
       - ubuntu2004cis_rule_5_2_5
-      - not bastion
+      - bastion
   tags:
       - level1
       - scored
@@ -508,7 +508,7 @@
       line: 'AllowTcpForwarding no'
   when:
       - ubuntu2004cis_rule_5_2_20
-      - not bastion
+      - bastion
   tags:
       - level2
       - scored
